@@ -42,7 +42,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/product/store', [ProductController::class, 'store'])->name('product.store');
     Route::get('/transaction', [TransactionController::class, 'index'])->name('transaction');
     Route::get('/sales_report', [Sales_ReportController::class, 'index'])->name('sales_report');
-    Route::get('/transaction/print', [TransactionController::class, 'print'])->name('transaction.print');
+    Route::get('/transaction/print', [TransactionController::class, 'print'])->name('Transactions.print');
 });
 
 require __DIR__.'/auth.php';

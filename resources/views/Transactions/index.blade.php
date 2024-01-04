@@ -10,7 +10,7 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <!-- CONTENT HERE -->
-                    <x-primary-button tag="a" href="{{ route('transaction.print')}}" target='blank'>Cetak PDF</x-primary-button>
+                    <x-primary-button tag="a" href="{{ route('Transactions.print')}}" target='blank'>Cetak PDF</x-primary-button>
                     <x-table>
                         <x-slot name="header">
                             <tr>

@@ -16,7 +16,7 @@ class TransactionController extends Controller
     public function print()
     {
         $transactions = Transaction::all();
-        $pdf = PDF::loadview('transaction.print', ['transactions' => $transactions]);
+        $pdf = PDF::loadview('Transactions.print', ['transactions' => $transactions]);
         return $pdf->download('transaction.pdf');
     }
 }

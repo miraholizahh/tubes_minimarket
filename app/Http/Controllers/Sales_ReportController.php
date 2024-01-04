@@ -9,6 +9,6 @@ class Sales_ReportController extends Controller
 {
     public function index(){
         $data ['sales_reports'] = Sales_Report::with('product')->get();
-        return view('sales_report.index', $data);
+        return view('sales_reports.index', $data);
     }
 }
