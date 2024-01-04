@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Product') }}
+            {{ __('Sales Report') }}
         </h2>
     </x-slot>
 
@@ -10,27 +10,20 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <!-- CONTENT HERE -->
-                    <x-primary-button tag="a" href="{{ route('product.create')}}">Tambah Product</x-primary-button>
-                    <br/><br/>
-
                     <x-table>
                         <x-slot name="header">
                             <tr>
                                 <th>No</th>
-                                <th>Nama Produk</th>
-                                <th>Harga</th>
-                                <th>Stok</th>
-                                <th>Kategori ID</th>
+                                <th>Tanggal Laporan</th>
+                                <th>Total Penjualan</th>
                             </tr>
                         </x-slot>
                         @php $num=1; @endphp
-                        @foreach($products as $product)
+                        @foreach($sales_reports as $sales_report)
                          <tr>
                             <td>{{ $num++ }}</td>
-                            <td>{{ $product->nama_produk }}</td>
-                            <td>{{ $product->harga }}</td>
-                            <td>{{ $product->stok }}</td>
-                            <td>{{ $product->kategori_id }}-{{ $product->nama }}</td>
+                            <td>{{ $sales_report->tanggal_laporan }}</td>
+                            <td>{{ $sales_report->total_penjualan }}</td>
                         </tr>
                     @endforeach
                     </x-table>
@@ -39,4 +32,3 @@
         </div>
     </div>
 </x-app-layout>
-                

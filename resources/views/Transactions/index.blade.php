@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Product') }}
+            {{ __('Transaction') }}
         </h2>
     </x-slot>
 
@@ -10,27 +10,25 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <!-- CONTENT HERE -->
-                    <x-primary-button tag="a" href="{{ route('product.create')}}">Tambah Product</x-primary-button>
-                    <br/><br/>
-
+                    <x-primary-button tag="a" href="{{ route('transaction.print')}}" target='blank'>Cetak PDF</x-primary-button>
                     <x-table>
                         <x-slot name="header">
                             <tr>
                                 <th>No</th>
-                                <th>Nama Produk</th>
-                                <th>Harga</th>
-                                <th>Stok</th>
-                                <th>Kategori ID</th>
+                                <th>Tanggal Transaksi</th>
+                                <th>Produk ID</th>
+                                <th>Jumlah</th>
+                                <th>Total Harga</th>
                             </tr>
                         </x-slot>
                         @php $num=1; @endphp
-                        @foreach($products as $product)
+                        @foreach($transactions as $transaction)
                          <tr>
                             <td>{{ $num++ }}</td>
-                            <td>{{ $product->nama_produk }}</td>
-                            <td>{{ $product->harga }}</td>
-                            <td>{{ $product->stok }}</td>
-                            <td>{{ $product->kategori_id }}-{{ $product->nama }}</td>
+                            <td>{{ $transaction->tanggal_transaksi }}</td>
+                            <td>{{ $transaction->produk_id }}</td>
+                            <td>{{ $transaction->jumlah }}</td>
+                            <td>{{ $transaction->total_harga }}</td>
                         </tr>
                     @endforeach
                     </x-table>
@@ -39,4 +37,3 @@
         </div>
     </div>
 </x-app-layout>
-                

@@ -5,6 +5,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\StockController;
+use App\Http\Controllers\TransactionController;
+use App\Http\Controllers\Sales_ReportController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -37,6 +40,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/stock', [StockController::class, 'index'])->name('stock');
     Route::get('/product/create', [ProductController::class, 'create'])->name('product.create');
     Route::post('/product/store', [ProductController::class, 'store'])->name('product.store');
+    Route::get('/transaction', [TransactionController::class, 'index'])->name('transaction');
+    Route::get('/sales_report', [Sales_ReportController::class, 'index'])->name('sales_report');
+    Route::get('/transaction/print', [TransactionController::class, 'print'])->name('transaction.print');
 });
 
 require __DIR__.'/auth.php';

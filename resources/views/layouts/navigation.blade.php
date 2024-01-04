@@ -31,6 +31,16 @@
                         {{ __('Stock') }}
                     </x-nav-link>
                 </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('transaction')" :active="request()->routeIs('transaction')">
+                        {{ __('Transaction') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('sales_report')" :active="request()->routeIs('sales_report')">
+                        {{ __('Sales Report') }}
+                    </x-nav-link>
+                </div>
             </div>
 
             <!-- Settings Dropdown -->
