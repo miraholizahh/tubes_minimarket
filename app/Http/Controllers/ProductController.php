@@ -9,7 +9,7 @@ use App\Models\Category;
 class ProductController extends Controller
 {
     public function index(){
-        $data ['products'] = Product::with('category')->get();
+        $data ['categories'] = Product::with('category')->get();
         return view('products.index', $data);
     }
 
@@ -22,6 +22,7 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
+        'code' => 'required|max:3',
         'nama_produk' => 'required|max:255',
         'harga' => 'required|numeric',
         'stok' => 'required|numeric',

@@ -10,14 +10,26 @@ class Product extends Model
 {
     use HasFactory;
 
-    public function category():BelongsTo
+    public function category(): BelongsTo
     {
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo(Category::class, 'kategori_id');
+    }
+
+    public function transactions()
+    {
+        return $this->hasMany(Transaction::class, 'id_produk', 'id');
+    }
+
+    public function incoming_products()
+    {
+        return $this->hasMany(In::class, 'id_produk', 'id');
     }
 
     protected $fillable = [
+        'code',
         'nama_produk',
-        'harga',
+        'harga_beli',
+        'harga_jual',
         'stok',
         'kategori_id',
     ];

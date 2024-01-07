@@ -16,12 +16,14 @@ class CategoriSeeder extends Seeder
         $user = Category::insert([
             [
                 'id' => '1',
+                'code'=>'M001',
                 'nama' => 'Makanan',
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
                 'id' => '2',
+                'code' => 'M002',
                 'nama' => 'Minuman',
                 'created_at' => now(),
                 'updated_at' => now()
@@ -29,6 +31,7 @@ class CategoriSeeder extends Seeder
             [
                 'id' => '3',
                 'nama' => 'Sembako',
+                'code' => 'S001',
                 'created_at' => now(),
                 'updated_at' => now()
             ],

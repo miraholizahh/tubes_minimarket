@@ -11,10 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('stocks', function (Blueprint $table) {
-            $table->bigIncrements('id');
+        Schema::create('detail_transactions', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('id_transaksi');
+            $table->date('tanggal_transaksi');
             $table->unsignedBigInteger('produk_id');
-            $table->integer('jumlah_stok');
+            $table->decimal('harga_jual', 10 ,2);
+            $table->integer('jumlah');
+            $table->decimal('subtotal', 10, 2);
             $table->timestamps();
 
             $table->foreign('produk_id')
@@ -30,6 +34,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('stocks');
+        Schema::dropIfExists('detail_transactions');
     }
 };

@@ -12,17 +12,19 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('incoming_products', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->unsignedBigInteger('produk_id');
+            $table->id();
+            $table->date('tanggal');
+            $table->unsignedBigInteger('id_produk');
             $table->integer('jumlah');
-            $table->integer('biaya');
+            $table->decimal('biaya',10,2);
             $table->timestamps();
 
-            $table->foreign('produk_id')
+            $table->foreign('id_produk')
             ->references('id')
             ->on('products')
             ->onUpdate('cascade')
             ->onDelete('cascade');
+
         });
     }
 

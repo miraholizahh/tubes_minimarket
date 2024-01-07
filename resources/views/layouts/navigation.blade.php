@@ -17,7 +17,7 @@
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('kategori')" :active="request()->routeIs('kategori')">
+                    <x-nav-link :href="route('category')" :active="request()->routeIs('category')">
                         {{ __('Kategori') }}
                     </x-nav-link>
                 </div>
@@ -27,8 +27,23 @@
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('stock')" :active="request()->routeIs('stock')">
-                        {{ __('Stock') }}
+                    <x-nav-link :href="route('transaction')" :active="request()->routeIs('transaction') || request()->routeIs('transaction.create')">
+                        {{ __('Transaksi') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('incoming')" :active="request()->routeIs('incoming') || request()->routeIs('incoming.create')">
+                        {{ __('Produk Masuk') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('laporan.stock')" :active="request()->routeIs('laporan.stock')">
+                        {{ __('Laporan Stok') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('laporan.transaksi')" :active="request()->routeIs('laporan.transaksi')">
+                        {{ __('Laporan Transaksi') }}
                     </x-nav-link>
                 </div>
             </div>
